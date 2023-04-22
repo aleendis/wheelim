@@ -4,4 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/GPS_View"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@android:drawable/ic_menu_mapmode"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gps_location"/>
+
+    <TextView
+        android:id="@+id/gps_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="위도: \n경도: "
+        android:textSize="12pt"
+        app:layout_constraintTop_toBottomOf="@+id/GPS_View"
+        app:layout_constraintBottom_toTopOf="@+id/Warning"/>
+
+    <TextView
+        android:id="@+id/Warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="낙상사고 발생!"
+        android:textSize="28pt"
+        app:layout_constraintTop_toBottomOf="@+id/gps_location"/>
+
+    <ImageView
+        android:id="@+id/alert"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        app:srcCompat="@android:drawable/ic_dialog_alert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Warning"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"/>
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="12"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="긴급전화"
+            app:layout_constraintStart_toStartOf="@+id/bottom_bar"
+            app:layout_constraintEnd_toStartOf="@+id/gps_send"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gps_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="좌표전송"
+            app:layout_constraintStart_toEndOf="@+id/call"
+            app:layout_constraintEnd_toStartOf="@+id/mute"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="알람끄기"
+            app:layout_constraintStart_toEndOf="@+id/gps_send"
+            app:layout_constraintEnd_toEndOf="@+id/bottom_bar"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
