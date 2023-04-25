@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity{
         setContentView(binding.root)
 
         val intent = Intent(this, JoinActivity::class.java)
-        binding.button
+        binding.
         setContentView(R.layout.activity_login)
     }
 }
