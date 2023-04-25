@@ -8,9 +8,18 @@ import com.example.wheelim.databinding.ActivityMainBinding
 
 class LoginActivity : AppCompatActivity{
 
-    val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-    private lateinit var blinding:ActivityMainBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        val intent = Intent(this, JoinActivity::class.java)
+        binding.button
+        setContentView(R.layout.activity_login)
+    }
+}
+
     var toggle: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
