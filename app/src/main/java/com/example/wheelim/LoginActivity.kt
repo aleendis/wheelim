@@ -17,4 +17,8 @@ class LoginActivity : AppCompatActivity(){
         val intent = Intent(this, JoinActivity::class.java)
         binding.signup.setOnClickListener{startActivity(intent)}
     }
+
+    /*val bundle = Bundle()
+    bundle.putString(FirebaseAnalytics.Param.METHOD, method)
+    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle) */
 }
