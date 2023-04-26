@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "824344755263",
+    "project_id": "wheelim-e81e1",
+    "storage_bucket": "wheelim-e81e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824344755263:android:ec3d67cad98574ae8a4c8a",
+        "android_client_info": {
+          "package_name": "com.example.wheelim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824344755263-6lsm1o6q1778pi8pc44j954a3938iv29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAL91r4TlS_kCy7j_WVcOcSfWNDpthihE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824344755263-6lsm1o6q1778pi8pc44j954a3938iv29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

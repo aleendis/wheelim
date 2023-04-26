@@ -1,15 +1,19 @@
 package com.example.wheelim
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
+import com.example.wheelim.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-        return super.onTouchEvent(event)
-    }
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
+
+        val intent = Intent(this, MainActivity::class.java)
+        //binding.call.setOnClickListener()
     }
 }
