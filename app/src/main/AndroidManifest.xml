@@ -16,13 +16,25 @@
         android:theme="@style/Theme.Wheelim"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".JoinActivity">
+
+        </activity>
+        <activity android:name=".View_pwd_Activity">
+
+        </activity>
+        <activity android:name=".Find_pwd_Activity">
+
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
