@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".Find_pwd_Activity">
 
     <TextView
         android:id="@+id/textView"
@@ -31,7 +32,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="@+id/email"
-            />
+        app:layout_constraintStart_toStartOf="@+id/email" />
 
     <EditText
         android:id="@+id/email"
@@ -47,12 +48,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
             />
     <Button
+        android:id="@+id/mail_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="번호전송"
         app:layout_constraintStart_toEndOf="@+id/email"
         app:layout_constraintBaseline_toBaselineOf="@+id/email"
         />
+
     <EditText
         android:id="@+id/num"
         android:layout_width="wrap_content"
@@ -60,9 +63,9 @@
         android:ems="10"
         android:hint="인증번호"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintEnd_toEndOf="@+id/email"
-        />
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
     <Button
         android:id="@+id/check"
         style="@style/defaultButton"

@@ -24,6 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".JoinActivity">
+
+        </activity>
+        <activity android:name=".View_pwd_Activity">
+
+        </activity>
+        <activity android:name=".Find_pwd_Activity">
+
+        </activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
