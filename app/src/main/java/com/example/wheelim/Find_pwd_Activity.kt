@@ -26,23 +26,19 @@ class Find_pwd_Activity: AppCompatActivity() {
         binding.check.setOnClickListener{
             var isGoToJoin = true
             val email = binding.email.text.toString()
-            val enroll = binding.num.text.toString()
-            val intent = Intent(this, View_pwd_Activity::class.java)
-
-            Firebase.auth.sendPasswordResetEmail(email)
-                .addOnCompleteListener{task ->
-                    if(task.isSuccessful){
-                        Log.d(TAG, "Email sent.")
-                    }
-                }
+            val intent = Intent(this, LoginActivity::class.java)
 
             if(email.isEmpty()){
                 Toast.makeText(this, "이메일을 입력해주세요.", Toast.LENGTH_LONG).show()
                 isGoToJoin = false
-            }
-            if(enroll.isEmpty()){
-                Toast.makeText(this, "인증번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
-                isGoToJoin = false
+            }else{
+                Firebase.auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener{task ->
+                        if(task.isSuccessful){
+                            Log.d(TAG, "Email sent.")
+                        }
+                    }
+                Toast.makeText(this, "메일 전송에 성공했습니다.", Toast.LENGTH_SHORT).show()
             }
             if(isGoToJoin){
                 startActivity(intent)
