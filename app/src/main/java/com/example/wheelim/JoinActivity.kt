@@ -17,16 +17,6 @@ import com.google.firebase.ktx.Firebase
 private lateinit var auth: FirebaseAuth
 class JoinActivity: AppCompatActivity() {
     private lateinit var binding: ActivityJoinBinding
-    public override fun onStart() {
-        super.onStart()
-        val currentUser = auth.currentUser
-        if(currentUser != null){
-            reload()
-        }
-    }
-    private fun reload() {
-        TODO("Not yet implemented")
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -63,9 +53,6 @@ class JoinActivity: AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if(task.isSuccessful){
-                            Log.d(TAG, "유저정보 생성완료")
-                            val user = auth.currentUser
-                            updateUI(user)
                             Toast.makeText(this, "회원가입에 성공했습니다.", Toast.LENGTH_LONG).show()
                             startActivity(intent)
                         }else{

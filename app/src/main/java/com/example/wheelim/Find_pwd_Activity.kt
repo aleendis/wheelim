@@ -22,15 +22,15 @@ class Find_pwd_Activity: AppCompatActivity() {
         binding.check.setOnClickListener{
             var isGoToJoin = true
             val email = binding.email.text.toString()
-            val name = binding.name.text.toString()
-            val intent = Intent(this, Find_pwd_Activity::class.java)
+            val enroll = binding.num.text.toString()
+            val intent = Intent(this, View_pwd_Activity::class.java)
 
             if(email.isEmpty()){
                 Toast.makeText(this, "이메일을 입력해주세요.", Toast.LENGTH_LONG).show()
                 isGoToJoin = false
             }
-            if(name.isEmpty()){
-                Toast.makeText(this, "이름을 입력해주세요.", Toast.LENGTH_LONG).show()
+            if(enroll.isEmpty()){
+                Toast.makeText(this, "인증번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
                 isGoToJoin = false
             }
             if(isGoToJoin){

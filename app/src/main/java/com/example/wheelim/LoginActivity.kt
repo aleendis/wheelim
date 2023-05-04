@@ -19,11 +19,21 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        val intent = Intent(this, MainActivity::class.java)
+
+        binding.signup.setOnClickListener {
+            val intent = Intent(this, JoinActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.findPwd.setOnClickListener {
+            val intent = Intent(this, Find_pwd_Activity::class.java)
+            startActivity(intent)
+        }
 
         binding.loginButton.setOnClickListener{
             val email = binding.loginId.text.toString()
             val password = binding.loginPwd.text.toString()
+            val intent = Intent(this, MainActivity::class.java)
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
