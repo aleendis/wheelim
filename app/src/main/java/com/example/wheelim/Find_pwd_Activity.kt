@@ -1,8 +1,11 @@
 package com.example.wheelim
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.nfc.Tag
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -14,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 private lateinit var auth: FirebaseAuth
 class Find_pwd_Activity: AppCompatActivity() {
     private lateinit var binding: ActivityFindPwdBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
@@ -24,6 +28,13 @@ class Find_pwd_Activity: AppCompatActivity() {
             val email = binding.email.text.toString()
             val enroll = binding.num.text.toString()
             val intent = Intent(this, View_pwd_Activity::class.java)
+
+            Firebase.auth.sendPasswordResetEmail(email)
+                .addOnCompleteListener{task ->
+                    if(task.isSuccessful){
+                        Log.d(TAG, "Email sent.")
+                    }
+                }
 
             if(email.isEmpty()){
                 Toast.makeText(this, "이메일을 입력해주세요.", Toast.LENGTH_LONG).show()
