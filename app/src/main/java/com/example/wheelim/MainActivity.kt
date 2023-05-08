@@ -19,17 +19,20 @@ private lateinit var auth: FirebaseAuth
 class MainActivity : AppCompatActivity() {
     val mContext = this
     private lateinit var binding: ActivityMainBinding
+    private var backPressedTime: Long = 0
+    override fun onBackPressed() {
+        if(System.currentTimeMillis() - backPressedTime >= 2000){
+            backPressedTime = System.currentTimeMillis()
+            Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show()
+        }else{
+            finish()
+        }
+    }
 
-    //@SuppressLint("QueryPermissionsNeeded")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-
-        // binding.contentMain.toolbar.ibToolbar.setOnClickListener{
-
-        // }
-        val intent = Intent(this, MainActivity::class.java)
         binding.call.setOnClickListener() {
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse("tel:119")
