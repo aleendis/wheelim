@@ -21,6 +21,10 @@
         android:theme="@style/Theme.Wheelim"
         tools:targetApi="31">
 
+        <meta-data
+            android:name="com.google.android.API_KEY"
+            android:value="API키"/>
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">

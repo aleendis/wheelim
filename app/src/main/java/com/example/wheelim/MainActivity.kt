@@ -1,6 +1,8 @@
 package com.example.wheelim
 
 import android.annotation.SuppressLint
+import android.app.AlarmManager
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -21,10 +23,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var backPressedTime: Long = 0
     override fun onBackPressed() {
-        if(System.currentTimeMillis() - backPressedTime >= 2000){
+        if (System.currentTimeMillis() - backPressedTime >= 2000) {
             backPressedTime = System.currentTimeMillis()
             Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show()
-        }else{
+        } else {
             finish()
         }
     }
@@ -40,5 +42,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
     }
 }
