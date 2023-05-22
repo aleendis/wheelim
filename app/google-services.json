@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "824344755263",
+    "firebase_url": "https://wheelim-e81e1-default-rtdb.firebaseio.com",
     "project_id": "wheelim-e81e1",
     "storage_bucket": "wheelim-e81e1.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "824344755263-epidpvtpkhqaatmet1gnlhjmrlomok1p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wheelim",
+            "certificate_hash": "117b5e5cae0dfc2cda16065a77ddaab6c80ec0bc"
+          }
+        },
         {
           "client_id": "824344755263-6lsm1o6q1778pi8pc44j954a3938iv29.apps.googleusercontent.com",
           "client_type": 3
