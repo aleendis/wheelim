@@ -16,9 +16,11 @@ import androidx.fragment.app.Fragment
 import com.example.wheelim.databinding.ActivityMainBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -27,11 +29,13 @@ import com.google.firebase.ktx.Firebase
 
 private lateinit var auth: FirebaseAuth
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback{
+class MainActivity : AppCompatActivity(){
     val mContext = this
 
-    private lateinit var nMap: GoogleMap
+    private lateinit var mapView: MapView
+    private lateinit var googleMap: GoogleMap
     private lateinit var binding: ActivityMainBinding
+    private var currentMarker: Marker? = null
     private var backPressedTime: Long = 0
     override fun onBackPressed() {
         if (System.currentTimeMillis() - backPressedTime >= 2000) {
@@ -44,6 +48,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+     //   mapView.onCreate(savedInstanceState)
+     //   mapView.getMapAsync(this)
 
         binding.call.setOnClickListener() {
             val intent = Intent(Intent.ACTION_DIAL)
@@ -58,10 +65,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback{
             finishAffinity()
             startActivity(Intent(this, LoginActivity::class.java))
         }
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.GPS_View) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+     //   val mapFragment = supportFragmentManager.findFragmentById(R.id.GPS_View) as SupportMapFragment
+      //  mapFragment.getMapAsync(this)
     }
-    override fun onMapReady(googleMap: GoogleMap){
+  /*  override fun onMapReady(googleMap: GoogleMap){
+        this.googleMap = googleMap
         val seoul = LatLng(37.556, 126.97)
 
         val markerOptions = MarkerOptions()
@@ -69,8 +77,35 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback{
         markerOptions.title("서울")
         markerOptions.snippet("한국 수도")
 
-        nMap?.addMarker(markerOptions)
+        googleMap?.addMarker(markerOptions)
 
-        nMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 10f))
+        googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 10f))
     }
+    override fun onStart(){
+        super.onStart()
+        mapView.onStart()
+    }
+    override fun onStop(){
+        super.onStop()
+        mapView.onStop()
+    }
+    override fun onResume(){
+        super.onResume()
+        mapView.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mapView.onPause()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView.onLowMemory()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mapView.onDestroy()
+    }*/
 }
