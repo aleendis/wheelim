@@ -75,6 +75,7 @@ class LoginActivity : AppCompatActivity(){
                                         if(task.isSuccessful){
                                             Log.e(TAG, "signInWithCredential: success")
                                             val user = auth.currentUser
+                                            finishAffinity()
                                             startActivity(Intent(this, MainActivity::class.java))
                                             updateUI(user)
                                         }else{

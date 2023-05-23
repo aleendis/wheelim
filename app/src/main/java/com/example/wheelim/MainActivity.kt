@@ -27,7 +27,7 @@ import com.google.firebase.ktx.Firebase
 
 private lateinit var auth: FirebaseAuth
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity(), OnMapReadyCallback{
     val mContext = this
 
     private lateinit var nMap: GoogleMap
@@ -55,12 +55,13 @@ class MainActivity : AppCompatActivity(){
 
         binding.logout.setOnClickListener {
             Firebase.auth.signOut()
+            finishAffinity()
             startActivity(Intent(this, LoginActivity::class.java))
         }
-      /*  val mapFragment = supportFragmentManager.findFragmentById(R.id.GPS_View) as SupportMapFragment
-        mapFragment.getMapAsync(this)*/
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.GPS_View) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
-  /*  override fun onMapReady(googleMap: GoogleMap){
+    override fun onMapReady(googleMap: GoogleMap){
         val seoul = LatLng(37.556, 126.97)
 
         val markerOptions = MarkerOptions()
@@ -71,5 +72,5 @@ class MainActivity : AppCompatActivity(){
         nMap?.addMarker(markerOptions)
 
         nMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 10f))
-    }*/
+    }
 }

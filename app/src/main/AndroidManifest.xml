@@ -27,6 +27,12 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB_dsI-y7Tzha2mxLPQE5DWy9jzF6mTj4U"/>
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="byn7lzz80a"/>
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_TYTPE"
+            android:value="gov"/>
 
         <activity
             android:name=".LoginActivity"
