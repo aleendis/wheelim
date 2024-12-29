@@ -1,25 +1,21 @@
 package com.example.wheelim
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.wheelim.databinding.ActivityJoinBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 private lateinit var auth: FirebaseAuth
 class JoinActivity: AppCompatActivity() {
     private lateinit var binding: ActivityJoinBinding
+
     override fun onBackPressed() {
         //     super.onBackPressed()
     }
@@ -30,6 +26,7 @@ class JoinActivity: AppCompatActivity() {
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
         return super.dispatchTouchEvent(ev)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -70,8 +67,11 @@ class JoinActivity: AppCompatActivity() {
                             finishAffinity()
                             startActivity(intent)
                         }else{
-                            Toast.makeText(this, "이미 존재하는 계정입니다.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show()
                         }
+                    }
+                    .addOnFailureListener(this){ exception ->
+                        Toast.makeText(this, "회원가입 도중 오류가 발생했습니다: ${exception.message}", Toast.LENGTH_SHORT).show()
                     }
             }
         }

@@ -53,6 +53,14 @@ class LoginActivity : AppCompatActivity(){
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
         return super.dispatchTouchEvent(ev)
     }
+    override fun onStart(){
+        super.onStart()
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            finishAffinity()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
