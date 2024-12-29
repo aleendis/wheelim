@@ -5,6 +5,6 @@
 박시모 임승민 이효준
 <h1>📚 STACKS</h1>
 
-언어: <img src="https://img.shields.io/badge/Kotlin-#7F52FF?style=for-the-badge&logo=kotlin&logoColor=white">
-<img src="https://img.shields.io/badge/C++-#00599C?style=for-the-badge&logo=c++&logoColor=white">
+언어: <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white">
+<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c++&logoColor=white">
 <br>
