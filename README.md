@@ -12,3 +12,8 @@
 도구: <img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=black">
 <img src="https://img.shields.io/badge/arduino-00878F?style=for-the-badge&logo=arduino&logoColor=black">
 <br>
+
+협업도구: <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=black"> 
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=black"> 
+<img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=black">
+<br>
