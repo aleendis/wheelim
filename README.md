@@ -22,4 +22,7 @@
 파이어베이스 서버에서 토큰을 사용한 로그인 기능을 구현했고, 구글 계정으로도 로그인이 가능하게 구현했습니다. <br>
 <img src="https://github.com/user-attachments/assets/f2a1474f-5439-4ee6-abef-5b81e670c2d1" width="300" height="700"/><br>
 
-
+# 메인화면
+낙상감지 전 화면                 낙상감지 후 화면 <br>
+<img src="https://github.com/user-attachments/assets/108a4f48-4b16-4295-8769-a880b06cb28c" width="300" height="700"/>  
+<img src="https://github.com/user-attachments/assets/2125d437-c67c-4e75-81c0-2440038ca57a" width="300" height="700"/><br>
