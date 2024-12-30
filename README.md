@@ -27,4 +27,8 @@
 <p align = "left">
 <img src="https://github.com/user-attachments/assets/108a4f48-4b16-4295-8769-a880b06cb28c" width="300" height="700"/>  
 <img src="https://github.com/user-attachments/assets/2125d437-c67c-4e75-81c0-2440038ca57a" width="300" height="700"/><br>
-</p>
+</p> <br>
+
+# 지도보기 화면
+메인화면에 있는 지도보기 클릭 시 낙상이 발생한 좌표의 지도를 보여주도록 구현했습니다. <br>
+<img src="https://github.com/user-attachments/assets/78b85798-df09-4d04-8b9d-c69ac3570482" width="300" height="700"/><br>
