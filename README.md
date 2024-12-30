@@ -24,5 +24,7 @@
 
 # 메인화면
 낙상감지 전 화면                 낙상감지 후 화면 <br>
+<p align = "left">
 <img src="https://github.com/user-attachments/assets/108a4f48-4b16-4295-8769-a880b06cb28c" width="300" height="700"/>  
 <img src="https://github.com/user-attachments/assets/2125d437-c67c-4e75-81c0-2440038ca57a" width="300" height="700"/><br>
+</p>
