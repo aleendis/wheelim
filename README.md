@@ -21,4 +21,6 @@
 # 로그인화면
 파이어베이스 서버에서 토큰을 사용한 로그인 기능을 구현했고, 구글 계정으로도 로그인이 가능하게 구현했습니다. <br>
 
-![로그인 화면](https://github.com/user-attachments/assets/270f461e-f818-4d81-8405-95687b8d226d)
+![로그인화면](https://github.com/user-attachments/assets/f2a1474f-5439-4ee6-abef-5b81e670c2d1)
+
+
